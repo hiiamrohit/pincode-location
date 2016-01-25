@@ -17,9 +17,9 @@ if(isset($q) || !empty($q)) {
     $result = mysqli_query($con, $query);
     $res = array();
     while($resultSet = mysqli_fetch_assoc($result)) {
-	 $res[$resultSet['id']]['id'] =  $resultSet['divisionname']."-".$resultSet['egionname']."-".$resultSet['circlename']."-".$resultSet['taluk']."-".$resultSet['statename'];
-     $res[$resultSet['id']]['value'] =  $resultSet['pincode'];
-    $res[$resultSet['id']]['label'] =  $resultSet['pincode'];
+     $res[$resultSet['id']]['id'] =  $resultSet['divisionname']."-".$resultSet['egionname']."-".$resultSet['circlename']."-".$resultSet['taluk']."-".$resultSet['statename'];
+     $res[$resultSet['id']]['value'] =  "Pincode: ".$resultSet['pincode'].", ".$resultSet['divisionname'].", ".$resultSet['egionname'].", ".$resultSet['circlename'].", ".$resultSet['taluk'].", ".$resultSet['statename'];
+    $res[$resultSet['id']]['label'] =   "Pincode: ".$resultSet['pincode'].", ".$resultSet['divisionname'].", ".$resultSet['egionname'].", ".$resultSet['circlename'].", ".$resultSet['taluk'].", ".$resultSet['statename'];
     
     }
     if(!$res) {
